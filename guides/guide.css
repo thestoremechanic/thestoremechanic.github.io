@@ -1,0 +1,51 @@
+:root {
+  --bg: #faf8f5;
+  --surface: #ffffff;
+  --text: #1d1b19;
+  --muted: #5f5a54;
+  --line: #e7e2db;
+  --accent: #e8590c;
+  --accent-ink: #ffffff;
+  --accent-soft: #fdeee4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151413;
+    --surface: #1e1c1b;
+    --text: #f1eeea;
+    --muted: #a9a29a;
+    --line: #322f2c;
+    --accent: #ff7a33;
+    --accent-ink: #1a0d05;
+    --accent-soft: #2c1d14;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.7 Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+header.top { border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: "Space Grotesk", sans-serif; font-weight: 700; text-decoration: none; color: var(--text); }
+.brand svg { width: 28px; height: 28px; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header.top .wrap { max-width: 1040px; }
+article { padding: 48px 0 24px; }
+.crumb { font-size: .9rem; color: var(--muted); }
+.crumb a { color: var(--muted); }
+h1, h2 { font-family: "Space Grotesk", Inter, sans-serif; line-height: 1.2; }
+h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin: 12px 0 14px; letter-spacing: -.01em; }
+h2 { font-size: 1.35rem; margin: 36px 0 8px; }
+.intro { color: var(--muted); font-size: 1.1rem; }
+.path { font-weight: 600; background: var(--accent-soft); padding: 1px 6px; border-radius: 5px; white-space: nowrap; }
+.callout { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 14px 18px; margin: 20px 0; }
+.cta { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin: 44px 0 56px; text-align: center; }
+.cta p { margin: 0 0 14px; color: var(--muted); }
+.btn { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 10px; }
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: .85rem; }
+li { margin: 6px 0; }

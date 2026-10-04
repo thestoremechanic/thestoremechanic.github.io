@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adding freight to Cost per item in Shopify: by value, weight or quantity? | The Store Mechanic</title>
+<meta name="description" content="How to split inbound freight across products to get landed cost, with a worked example, and the Shopify behaviour that catches people out after Stocky.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="guide.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8590c'/%3E%3Cpath d='M20.5 7.5a5 5 0 0 0-5.9 6.4l-7 7a2 2 0 0 0 2.8 2.8l7-7a5 5 0 0 0 6.4-5.9l-3 3-2.6-.7-.7-2.6z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M20.5 7.5a5 5 0 0 0-5.9 6.4l-7 7a2 2 0 0 0 2.8 2.8l7-7a5 5 0 0 0 6.4-5.9l-3 3-2.6-.7-.7-2.6z" fill="#fff"/></svg>The Store Mechanic</a>
+</div></header>
+<main class="wrap"><article>
+<div class="crumb"><a href="../">Home</a> · <a href="../#guides">Guides</a></div>
+<h1>Adding freight to Cost per item in Shopify: by value, weight or quantity?</h1>
+<p class="intro">If you pay freight on a stock order, that cost belongs in your products' <strong>Cost per item</strong>. Otherwise your margins look better than they are. The question is how to split one freight bill across different products.</p>
+
+<h2>Three ways to split freight</h2>
+<ul>
+  <li><strong>By value:</strong> each line gets freight in proportion to its cost. This is the common default, and it stops cheap items from soaking up too much freight.</li>
+  <li><strong>By weight:</strong> best when freight is driven by how heavy things are, for example bulky or heavy items mixed with light ones.</li>
+  <li><strong>By quantity:</strong> every unit gets the same share. Only fair when the items are similar in size and price.</li>
+</ul>
+
+<h2>A worked example (by value)</h2>
+<p>You order $2,000 of stock and pay $100 freight. Freight is 100 ÷ 2,000 = <strong>5%</strong> of the order, so every item's cost goes up 5%: a $10 item has a landed cost of <strong>$10.50</strong>, a $40 item becomes <strong>$42.00</strong>.</p>
+
+<h2>Weight: product weight or case weight?</h2>
+<p>For inbound freight, use the weight of what actually ships, the cases with their packaging. Divide each case's weight by the units in it to get a per-unit weight. The weight on your products in Shopify is set for sending orders to customers, so it can be wrong for inbound freight. Also, any product left at the default weight of 0 would get no freight at all.</p>
+
+<div class="callout"><strong>The part that catches people out:</strong> receiving a purchase order or transfer in Shopify updates your stock counts, but it <strong>does not change Cost per item</strong>. Shipping or duties added to the transfer's cost summary don't flow into product cost either, and Shopify doesn't calculate a weighted average for you.</div>
+
+<h2>What to do instead</h2>
+<ol>
+  <li>Work out the landed cost per unit using one of the methods above.</li>
+  <li>Edit each variant's <strong>Cost per item</strong> by hand after receiving.</li>
+  <li>If you still have older stock at a different cost, work out the blended average yourself: (old units × old cost + new units × new cost) ÷ total units.</li>
+  <li>If you do this a lot, an inventory app that handles landed or average cost will save time.</li>
+</ol>
+<div class="cta">
+  <p>Want your costs set up properly across your catalogue? I can do it for you. Fixed price, all by email.</p>
+  <a class="btn" href="mailto:thestoremechanic@gmail.com?subject=Store%20help%20request">Email The Store Mechanic</a>
+</div>
+</article></main>
+<footer><div class="wrap">© 2026 The Store Mechanic · Independent store help. Not affiliated with Shopify Inc.</div></footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to test Shopify abandoned checkout emails (and why yours isn't sending) | The Store Mechanic</title>
+<meta name="description" content="Step-by-step: where abandoned checkout emails live in Shopify now, how to trigger a real test, and the default setting that stops most tests from working.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="guide.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8590c'/%3E%3Cpath d='M20.5 7.5a5 5 0 0 0-5.9 6.4l-7 7a2 2 0 0 0 2.8 2.8l7-7a5 5 0 0 0 6.4-5.9l-3 3-2.6-.7-.7-2.6z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="../"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M20.5 7.5a5 5 0 0 0-5.9 6.4l-7 7a2 2 0 0 0 2.8 2.8l7-7a5 5 0 0 0 6.4-5.9l-3 3-2.6-.7-.7-2.6z" fill="#fff"/></svg>The Store Mechanic</a>
+</div></header>
+<main class="wrap"><article>
+<div class="crumb"><a href="../">Home</a> · <a href="../#guides">Guides</a></div>
+<h1>How to test Shopify abandoned checkout emails (and why yours isn't sending)</h1>
+<p class="intro">You set up abandoned checkout emails, abandon a checkout yourself to test it, and nothing arrives. Usually nothing is broken. The test just didn't meet the conditions Shopify needs.</p>
+
+<h2>Where the setting lives now</h2>
+<p>In newer stores, abandoned checkout emails are run as an automation in Shopify Messaging: <span class="path">Apps › Messaging › Automations › Abandoned checkout</span>. Open it and click <strong>Edit</strong> (or <strong>Edit settings</strong>) to see two key fields:</p>
+<ul>
+  <li><strong>To:</strong> who gets the email</li>
+  <li><strong>Send after:</strong> how long Shopify waits before sending</li>
+</ul>
+
+<div class="callout"><strong>The catch that breaks most tests:</strong> by default, the automation only emails customers who are <strong>subscribed to email marketing</strong>. If you didn't tick the marketing box when you tested, Shopify correctly sent nothing. Either tick it during your test, or change <strong>To:</strong> to <strong>All customers</strong>.</div>
+
+<h2>How to run a real test</h2>
+<ol>
+  <li>Open your store in a private (incognito) browser window.</li>
+  <li>Add a product to the cart and go to checkout.</li>
+  <li>Enter an email address you can check, and tick the email-marketing box if your checkout shows one.</li>
+  <li>Close the tab without paying.</li>
+  <li>Wait for the <strong>Send after</strong> delay you set, then check your inbox (and spam).</li>
+</ol>
+<p>Abandoning the <em>cart</em> isn't enough: it only counts once an email has been entered at checkout.</p>
+
+<h2>Other reasons it won't send</h2>
+<ul>
+  <li>The checkout came from a channel that doesn't support it. It works for the Online Store and Buy Button, not POS, the Shop app or most third-party channels.</li>
+  <li>The customer entered a phone number instead of an email.</li>
+  <li>The customer finished buying before the email was due.</li>
+  <li>The products are no longer available.</li>
+  <li>The checkout was blocked as high risk, or there was a payment error.</li>
+</ul>
+<div class="cta">
+  <p>Still not sending? Tell me what you've tried and I'll find the problem. Fixed price, all by email.</p>
+  <a class="btn" href="mailto:thestoremechanic@gmail.com?subject=Store%20help%20request">Email The Store Mechanic</a>
+</div>
+</article></main>
+<footer><div class="wrap">© 2026 The Store Mechanic · Independent store help. Not affiliated with Shopify Inc.</div></footer>
+</body>
+</html>
