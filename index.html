@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Store Mechanic</title>
+<meta name="description" content="Fixed-price fixes for small online stores: settings, themes, apps, shipping and tax setup, speed, imports, and monthly upkeep. No calls, just email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e8590c'/%3E%3Cpath d='M20.5 7.5a5 5 0 0 0-5.9 6.4l-7 7a2 2 0 0 0 2.8 2.8l7-7a5 5 0 0 0 6.4-5.9l-3 3-2.6-.7-.7-2.6z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #1d1b19;
+    --muted: #5f5a54;
+    --line: #e7e2db;
+    --accent: #e8590c;
+    --accent-ink: #ffffff;
+    --accent-soft: #fdeee4;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151413;
+      --surface: #1e1c1b;
+      --text: #f1eeea;
+      --muted: #a9a29a;
+      --line: #322f2c;
+      --accent: #ff7a33;
+      --accent-ink: #1a0d05;
+      --accent-soft: #2c1d14;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Space Grotesk", Inter, sans-serif; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 10px; }
+  .lead { color: var(--muted); font-size: 1.05rem; max-width: 620px; margin: 0 0 32px; }
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--line); }
+
+  /* nav */
+  header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: "Space Grotesk", sans-serif; font-weight: 700; text-decoration: none; }
+  .brand svg { width: 28px; height: 28px; }
+  nav a { text-decoration: none; color: var(--muted); font-size: .95rem; margin-left: 22px; }
+  nav a:hover { color: var(--text); }
+  @media (max-width: 640px) { nav a:not(.btn-sm) { display: none; } }
+
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-ink); text-decoration: none; font-weight: 600; padding: 13px 22px; border-radius: 10px; transition: transform .1s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-sm { background: var(--accent); color: var(--accent-ink) !important; padding: 8px 14px; border-radius: 8px; font-weight: 600; }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+
+  /* hero */
+  .hero { padding: 88px 0 72px; }
+  .eyebrow { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: .85rem; padding: 5px 12px; border-radius: 999px; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.6rem); max-width: 760px; letter-spacing: -.02em; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p { color: var(--muted); font-size: 1.15rem; max-width: 600px; margin: 20px 0 32px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .points { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 36px; color: var(--muted); font-size: .95rem; padding: 0; list-style: none; }
+  .points li::before { content: "✓"; color: var(--accent); font-weight: 700; margin-right: 8px; }
+
+  /* cards */
+  .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; box-shadow: var(--shadow); }
+  .card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .icon { width: 38px; height: 38px; border-radius: 10px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 14px; }
+  .icon svg { width: 20px; height: 20px; }
+
+  /* pricing */
+  .price { display: flex; flex-direction: column; }
+  .price .amt { font-family: "Space Grotesk", sans-serif; font-size: 2.2rem; font-weight: 700; margin: 6px 0 2px; }
+  .price .amt small { font-size: 1rem; color: var(--muted); font-weight: 500; }
+  .price ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); font-size: .93rem; }
+  .price ul li { margin: 4px 0; }
+  .price.featured { border: 2px solid var(--accent); }
+  .tag { align-self: flex-start; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--accent); margin-bottom: 4px; }
+  .note { color: var(--muted); font-size: .92rem; margin-top: 18px; }
+
+  /* steps */
+  .steps { counter-reset: s; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .step { counter-increment: s; }
+  .step::before { content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-weight: 700; margin-bottom: 12px; }
+
+  /* faq */
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--accent); font-size: 1.3rem; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); margin: 10px 0 0; }
+
+  /* contact */
+  .contact { text-align: center; }
+  .contact .lead { margin-left: auto; margin-right: auto; }
+  .mail { font-family: "Space Grotesk", sans-serif; font-size: 1.1rem; color: var(--muted); margin-top: 16px; }
+  .template { text-align: left; max-width: 520px; margin: 28px auto 0; background: var(--surface); border: 1px dashed var(--line); border-radius: 12px; padding: 18px 22px; color: var(--muted); font-size: .93rem; }
+  .template strong { color: var(--text); }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: .85rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--accent)"/><path d="M20.5 7.5a5 5 0 0 0-5.9 6.4l-7 7a2 2 0 0 0 2.8 2.8l7-7a5 5 0 0 0 6.4-5.9l-3 3-2.6-.7-.7-2.6z" fill="#fff"/></svg>
+      The Store Mechanic
+    </a>
+    <nav>
+      <a href="#fixes">What I fix</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn-sm" href="#contact">Get help</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Help for small online stores</span>
+      <h1>Something broken in your store? <em>I'll fix it.</em></h1>
+      <p>Settings, themes, apps, shipping rates, slow pages, messy product imports. Tell me what's wrong by email, get a fixed price, and it gets fixed. No calls, no contracts.</p>
+      <div class="ctas">
+        <a class="btn" href="#contact">Describe your problem</a>
+        <a class="btn btn-ghost" href="#pricing">See prices</a>
+      </div>
+      <ul class="points">
+        <li>Fixed price before any work starts</li>
+        <li>Everything by email</li>
+        <li>No passwords needed</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="fixes">
+    <div class="wrap">
+      <h2>What I fix</h2>
+      <p class="lead">The hands-on, technical stuff that eats your evenings. If it lives in your store admin, I can probably sort it out.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 20V9"/></svg></div>
+          <h3>Themes &amp; layout</h3>
+          <p>Broken sections, odd spacing on mobile, things that look wrong after an update or a theme change.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></div>
+          <h3>Shipping &amp; tax setup</h3>
+          <p>Wrong rates at checkout, zones that don't cover your customers, tax settings that don't add up.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+          <h3>Speed</h3>
+          <p>Slow pages, especially on phones. Leftover app code, heavy images, scripts you don't need.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+          <h3>Apps</h3>
+          <p>Apps that clash, stopped working, or got uninstalled but left a mess behind.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+          <h3>Products &amp; imports</h3>
+          <p>CSV imports that fail, variants gone wrong, bulk edits, moving products from another platform.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
+          <h3>Tracking &amp; automations</h3>
+          <p>Analytics and ad pixels that don't match up, abandoned-checkout emails, simple automations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Simple prices</h2>
+      <p class="lead">You always get a fixed price before anything starts. If your problem is bigger than it looked, I'll tell you first. No surprise bills.</p>
+      <div class="grid">
+        <div class="card price">
+          <h3>Quick fix</h3>
+          <div class="amt">$35</div>
+          <p>One specific problem, fixed.</p>
+          <ul>
+            <li>A broken section, setting or app conflict</li>
+            <li>Short note on what was wrong</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <h3>Setup help</h3>
+          <div class="amt">$60</div>
+          <p>Get one area set up properly.</p>
+          <ul>
+            <li>Shipping, tax, checkout or store settings</li>
+            <li>Checked end to end with a test order</li>
+          </ul>
+        </div>
+        <div class="card price featured">
+          <span class="tag">Most popular</span>
+          <h3>Speed check + fixes</h3>
+          <div class="amt">$75</div>
+          <p>Find what's slowing your store and fix it.</p>
+          <ul>
+            <li>Before &amp; after speed scores</li>
+            <li>Unused app code and heavy images cleaned up</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <h3>Monthly upkeep</h3>
+          <div class="amt">$99<small>/mo</small></div>
+          <p>Someone keeping an eye on things.</p>
+          <ul>
+            <li>Small fixes and changes as they come up</li>
+            <li>Monthly check-up on speed, apps and settings</li>
+            <li>Cancel any time</li>
+          </ul>
+        </div>
+      </div>
+      <p class="note">Bigger jobs (migrations, full theme work) get a custom quote. Payment by PayPal or card invoice.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="lead">All by email, on your schedule.</p>
+      <div class="steps">
+        <div class="card step">
+          <h3>Tell me what's wrong</h3>
+          <p>Email your store address and what's going on. Screenshots help.</p>
+        </div>
+        <div class="card step">
+          <h3>Get a fixed price</h3>
+          <p>I take a look and reply with what I'll do and what it costs.</p>
+        </div>
+        <div class="card step">
+          <h3>Give limited access</h3>
+          <p>You approve a collaborator request in your admin, limited to what the job needs. No passwords shared.</p>
+        </div>
+        <div class="card step">
+          <h3>It's fixed</h3>
+          <p>You get a short note on what was done. Then you can remove my access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2 style="margin-bottom:28px">Questions</h2>
+      <details>
+        <summary>Do you need my password?</summary>
+        <p>No. Your store platform lets you approve a "collaborator" with access to only the parts of your admin the job needs. You can remove it the moment the job is done.</p>
+      </details>
+      <details>
+        <summary>Why no phone calls?</summary>
+        <p>Email means you get everything in writing: what's wrong, the price, and what was changed. You can reply whenever suits you.</p>
+      </details>
+      <details>
+        <summary>What if you can't fix it?</summary>
+        <p>Then you don't pay. If I find it's something only your platform's support or an app developer can fix, I'll tell you exactly who to contact and what to say.</p>
+      </details>
+      <details>
+        <summary>How fast is it?</summary>
+        <p>Most quick fixes are done within a day or two of you approving the price.</p>
+      </details>
+      <details>
+        <summary>Will you change things I didn't ask for?</summary>
+        <p>No. I only touch what we agreed on, and anything else I notice goes in the note for you to decide.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Tell me what's broken</h2>
+      <p class="lead">Send a quick email. You'll get a reply with a fixed price, and there's no obligation.</p>
+      <a class="btn" href="mailto:thestoremechanic@gmail.com?subject=Store%20help%20request&amp;body=Store%20address%3A%20%0A%0AWhat's%20wrong%3A%20%0A%0AWhen%20did%20it%20start%3A%20%0A">Email The Store Mechanic</a>
+      <div class="mail">thestoremechanic@gmail.com</div>
+      <div class="template">
+        <strong>Helpful to include:</strong><br>
+        Your store address · what's wrong and where you see it · when it started · screenshots if you have them
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 The Store Mechanic</span>
+    <span>Independent store help. Not affiliated with Shopify Inc. or any platform.</span>
+  </div>
+</footer>
+
+</body>
+</html>
