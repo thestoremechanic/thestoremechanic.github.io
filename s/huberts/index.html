@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hubert&#x27;s Landscaping Company | Avon Lake</title>
+<meta name="description" content="Hubert&#x27;s Landscaping Company. Quality work, done right.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --accent:#2c5282; --accent-dark:#1a365d; --bg:#f6f8fb; --ink:#1a202c;
+  --muted:color-mix(in srgb, var(--ink) 62%, white); --line:color-mix(in srgb, var(--ink) 12%, transparent);
+  --hfont:'DM Serif Display', Georgia, serif; --bfont:'Inter', system-ui, sans-serif; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; font-family:var(--bfont); color:var(--ink); background:var(--bg); line-height:1.6; }
+a { color:var(--accent-dark); }
+img { display:block; max-width:100%; }
+.sample { background:#111; color:#fff; font-size:13px; text-align:center; padding:6px 16px; position:relative; z-index:3; }
+.hero { position:relative; min-height:min(88vh, 780px); display:flex; flex-direction:column; color:#fff; overflow:hidden;
+  background:radial-gradient(1200px 600px at 80% -10%, color-mix(in srgb, var(--accent) 70%, white) 0%, transparent 60%),
+             linear-gradient(160deg, var(--accent-dark), var(--ink)); }
+.hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.7) 100%); }
+.nav, .hero-body { position:relative; z-index:2; width:100%; max-width:1120px; margin:0 auto; padding:0 20px; }
+.nav { display:flex; justify-content:space-between; align-items:center; gap:12px; padding-top:20px; }
+.logo { font-family:var(--hfont); font-weight:700; font-size:22px; }
+.nav a { color:#fff; font-weight:600; text-decoration:none; white-space:nowrap; }
+.hero-body { margin-top:auto; padding-bottom:clamp(40px, 8vh, 80px); }
+.eyebrow { font-weight:600; letter-spacing:.14em; text-transform:uppercase; font-size:13px; margin-bottom:14px; opacity:.9; }
+.hero h1 { font-family:var(--hfont); font-size:clamp(44px, 8vw, 92px); line-height:1.02; margin:0 0 18px; letter-spacing:-0.02em; max-width:14ch; }
+.hero h1 .w { display:inline-block; overflow:hidden; vertical-align:top; padding-bottom:.08em; }
+.hero h1 .w > span { display:inline-block; }
+.hero p.intro { font-size:clamp(17px, 2.2vw, 21px); max-width:560px; margin:0 0 28px; opacity:.92; }
+.btns { display:flex; gap:12px; flex-wrap:wrap; }
+.btn { display:inline-block; background:var(--accent); color:#fff; padding:15px 24px; border-radius:999px; text-decoration:none; font-weight:600; border:0; font:inherit; font-weight:600; cursor:pointer; transition:transform .2s, background .2s; }
+.btn:hover { background:var(--accent-dark); transform:translateY(-2px); }
+.btn.light { background:#fff; color:var(--ink); }
+.btn.ghost { background:rgba(255,255,255,.12); color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6); backdrop-filter:blur(6px); }
+.cards { max-width:1120px; margin:0 auto; padding:72px 20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; }
+.card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px; }
+.num { font-family:var(--hfont); color:var(--accent); font-size:15px; font-weight:700; }
+.card h3 { font-family:var(--hfont); font-size:24px; margin:8px 0 6px; }
+.card p { margin:0; color:var(--muted); }
+.gallery { max-width:1120px; margin:0 auto; padding:0 20px 24px; }
+.gallery .grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; }
+.gallery img { width:100%; height:clamp(200px, 32vw, 380px); object-fit:cover; border-radius:16px; }
+.note { color:var(--muted); font-size:13px; margin:10px 0 0; }
+.book { padding:56px 20px; }
+.book-inner { max-width:1120px; margin:0 auto; background:var(--ink); color:#fff; border-radius:24px; padding:clamp(28px, 5vw, 56px);
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:32px; align-items:center; }
+.book h2 { font-family:var(--hfont); font-size:clamp(30px, 4vw, 44px); margin:10px 0 8px; line-height:1.1; }
+.book p { opacity:.85; margin:0; }
+.tag { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:rgba(255,255,255,.14); padding:4px 10px; border-radius:999px; }
+.existing { margin-top:12px !important; font-size:14px; }
+.widget { background:#fff; color:var(--ink); border-radius:18px; padding:20px; }
+.days, .times { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.days button, .times button { font:inherit; border:1px solid var(--line); background:var(--bg); border-radius:12px; padding:8px 12px; cursor:pointer; color:var(--ink); }
+.days button { min-width:62px; line-height:1.25; }
+.days button small { display:block; color:var(--muted); font-size:12px; }
+.days button.on, .times button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
+.days button.on small { color:#fff; }
+.confirm { width:100%; }
+.demo-msg { color:var(--muted) !important; opacity:1 !important; font-size:14px; margin-top:10px !important; text-align:center; }
+.info { max-width:1120px; margin:0 auto; padding:56px 20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:40px; }
+.panel h2 { font-family:var(--hfont); font-size:30px; margin:0 0 16px; }
+.hours { width:100%; border-collapse:collapse; }
+.hours th, .hours td { text-align:left; padding:9px 0; border-bottom:1px solid var(--line); font-weight:400; }
+.hours td { text-align:right; font-variant-numeric:tabular-nums; }
+.hours tr.closed { color:var(--muted); }
+.panel p { margin:0 0 16px; }
+.map { width:100%; height:260px; border:0; border-radius:16px; margin-top:8px; }
+footer { text-align:center; color:var(--muted); font-size:14px; padding:32px 20px 48px; border-top:1px solid var(--line); }
+@media (max-width:640px) { .gallery .grid { grid-template-columns:1fr 1fr; } .gallery img:first-child { grid-column:1 / -1; } }
+</style>
+</head>
+<body>
+<div class="sample">Sample design by Barry Lenhart. This is not the official website of Hubert&#x27;s Landscaping Company.</div>
+<section class="hero">
+  <img class="hero-img" src="img/1.jpg" alt="hangers, clothing, shopping, market, jacket, rack, shirt, shop, wear, clothing shop, clothing store, clothing, clothing, clothing, clothing, shopping, shopping, shopping, shopping, shopping, shop" fetchpriority="high">
+  <div class="nav"><div class="logo">Hubert&#x27;s Landscaping Company</div><a href="tel:+14409336222">(440) 933-6222</a></div>
+  <div class="hero-body">
+    <div class="eyebrow">Serving Avon Lake</div>
+    <h1><span class="w"><span>Quality</span></span> <span class="w"><span>work,</span></span> <span class="w"><span>done</span></span> <span class="w"><span>right</span></span> </h1>
+    <p class="intro">Call for a quote. We&#x27;ll talk through the job and give you a straight answer.</p>
+    <div class="btns"><a class="btn" href="#book">Request an estimate</a><a class="btn light" href="tel:+14409336222">Call (440) 933-6222</a></div>
+  </div>
+</section>
+<div class="cards"><div class="card reveal"><span class="num">01</span><h3>Call for a quote</h3><p>Tell us about the job and we&#x27;ll get back to you.</p></div><div class="card reveal"><span class="num">02</span><h3>Local and independent</h3><p>Not a franchise or a call center.</p></div><div class="card reveal"><span class="num">03</span><h3>Straight answers</h3><p>We&#x27;ll tell you what the job needs, nothing more.</p></div></div>
+<section class="gallery"><div class="grid"><img class="reveal" loading="lazy" src="img/2.jpg" alt="load, shopping, shop, grocery store, business, grocer, food, supermarket, product range, aunt emma, grocery store, grocery store, grocery store, grocery store, grocery store, supermarket, supermarket, supermarket"><img class="reveal" loading="lazy" src="img/3.jpg" alt="small shortbread, cookies, pastries, delicious, sweet, pastry shop, gourmet"><img class="reveal" loading="lazy" src="img/4.jpg" alt="car, market, mattress, full, overfull, rwanda, load, overload, small business, mattress, mattress, mattress, mattress, mattress, rwanda, rwanda, overload, overload, overload, overload, small business"></div><p class="note">Photos are placeholders. Your own photos go here.</p></section>
+<section id="book" class="book">
+  <div class="book-inner reveal">
+    <div><span class="tag">Example</span><h2>Request an estimate</h2><p>Tell us when works for you and we'll come take a look.</p></div>
+    <div class="widget" data-open="0,1,2,3,4,5">
+      <div class="days"></div><div class="times"></div>
+      <button class="btn confirm" type="button">Confirm</button>
+      <p class="demo-msg" hidden>This is a preview. Online booking can be set up for you.</p>
+    </div>
+  </div>
+</section>
+<section class="info">
+  
+  <div class="panel reveal"><h2>Get in touch</h2><p><strong>Call</strong><br><a href="tel:+14409336222">(440) 933-6222</a></p><p><strong>Email</strong><br><a href="mailto:hubertsland@hotmail.com">hubertsland@hotmail.com</a></p>
+    
+  </div>
+</section>
+<footer>&copy; Hubert&#x27;s Landscaping Company &middot; Photos from Pixabay</footer>
+<script>
+(function () {
+  var w = document.querySelector('.widget');
+  if (w) {
+    var open = w.dataset.open.split(',').map(Number), days = w.querySelector('.days'), times = w.querySelector('.times');
+    var names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], d = new Date(), shown = 0;
+    for (var i = 1; i < 21 && shown < 5; i++) {
+      var day = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i), idx = (day.getDay() + 6) % 7;
+      if (open.indexOf(idx) < 0) continue;
+      var b = document.createElement('button'); b.type = 'button';
+      b.innerHTML = names[day.getDay()] + '<small>' + (day.getMonth() + 1) + '/' + day.getDate() + '</small>';
+      if (!shown) b.className = 'on'; days.appendChild(b); shown++;
+    }
+    ['9:00 am','10:30 am','12:00 pm','1:30 pm','3:00 pm','4:30 pm'].forEach(function (t, k) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = t; if (k === 1) b.className = 'on'; times.appendChild(b);
+    });
+    w.addEventListener('click', function (ev) {
+      var b = ev.target.closest('button'); if (!b) return;
+      if (b.classList.contains('confirm')) { w.querySelector('.demo-msg').hidden = false; return; }
+      b.parentNode.querySelectorAll('button').forEach(function (x) { x.classList.remove('on'); }); b.classList.add('on');
+    });
+  }
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  if (!window.gsap || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+  var img = document.querySelector('.hero-img');
+  if (img) gsap.from(img, { scale: 1.08, duration: 1.6, ease: 'power2.out' });
+  gsap.from('.hero h1 .w > span', { yPercent: 110, duration: .9, ease: 'power4.out', stagger: .07 });
+  gsap.from('.hero .eyebrow, .hero .intro, .hero .btns', { y: 18, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1, delay: .35 });
+  gsap.set('.reveal', { y: 28, opacity: 0 });
+  ScrollTrigger.batch('.reveal', { start: 'top 90%', once: true,
+    onEnter: function (els) { gsap.to(els, { y: 0, opacity: 1, duration: .8, ease: 'power3.out', stagger: .1 }); } });
+});
+</script>
+</body>
+</html>
