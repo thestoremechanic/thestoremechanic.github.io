@@ -2,120 +2,149 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#e8e80d">
 <title>Quickway Services | Cleveland</title>
 <meta name="description" content="Quickway Services. Here when you need us.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-:root { --accent:#2c5282; --accent-dark:#1a365d; --bg:#f6f8fb; --ink:#1a202c;
-  --muted:color-mix(in srgb, var(--ink) 62%, white); --line:color-mix(in srgb, var(--ink) 12%, transparent);
-  --hfont:'DM Serif Display', Georgia, serif; --bfont:'Inter', system-ui, sans-serif; }
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,600;125,800;125,900&display=swap" rel="stylesheet">
+<style>:root { --accent:#e8e80d; --on-accent:#111111; --ink:#1b2229; --paper:#f3f4f2; --head:'Archivo', system-ui, sans-serif; --body:'Archivo', system-ui, sans-serif; --muted:color-mix(in srgb, var(--ink) 64%, var(--paper)); --line:color-mix(in srgb, var(--ink) 14%, transparent); --tint:color-mix(in srgb, var(--accent) 14%, var(--paper)); --tint-bg:color-mix(in srgb, var(--accent) 7%, var(--paper)); }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { margin:0; font-family:var(--bfont); color:var(--ink); background:var(--bg); line-height:1.6; }
-a { color:var(--accent-dark); }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body { margin:0; font-family:var(--body); color:var(--ink); background:var(--paper); line-height:1.6; font-size:17px; }
 img { display:block; max-width:100%; }
-.sample { background:#111; color:#fff; font-size:13px; text-align:center; padding:6px 16px; position:relative; z-index:3; }
-.hero { position:relative; min-height:min(88vh, 780px); display:flex; flex-direction:column; color:#fff; overflow:hidden;
-  background:radial-gradient(1200px 600px at 80% -10%, color-mix(in srgb, var(--accent) 70%, white) 0%, transparent 60%),
-             linear-gradient(160deg, var(--accent-dark), var(--ink)); }
-.hero-img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-.hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.25) 40%, rgba(0,0,0,.7) 100%); }
-.nav, .hero-body { position:relative; z-index:2; width:100%; max-width:1120px; margin:0 auto; padding:0 20px; }
-.nav { display:flex; justify-content:space-between; align-items:center; gap:12px; padding-top:20px; }
-.logo { font-family:var(--hfont); font-weight:700; font-size:22px; }
-.nav a { color:#fff; font-weight:600; text-decoration:none; white-space:nowrap; }
-.hero-body { margin-top:auto; padding-bottom:clamp(40px, 8vh, 80px); }
-.eyebrow { font-weight:600; letter-spacing:.14em; text-transform:uppercase; font-size:13px; margin-bottom:14px; opacity:.9; }
-.hero h1 { font-family:var(--hfont); font-size:clamp(44px, 8vw, 92px); line-height:1.02; margin:0 0 18px; letter-spacing:-0.02em; max-width:14ch; }
-.hero h1 .w { display:inline-block; overflow:hidden; vertical-align:top; padding-bottom:.08em; }
-.hero h1 .w > span { display:inline-block; }
-.hero p.intro { font-size:clamp(17px, 2.2vw, 21px); max-width:560px; margin:0 0 28px; opacity:.92; }
-.btns { display:flex; gap:12px; flex-wrap:wrap; }
-.btn { display:inline-block; background:var(--accent); color:#fff; padding:15px 24px; border-radius:999px; text-decoration:none; font-weight:600; border:0; font:inherit; font-weight:600; cursor:pointer; transition:transform .2s, background .2s; }
-.btn:hover { background:var(--accent-dark); transform:translateY(-2px); }
-.btn.light { background:#fff; color:var(--ink); }
-.btn.ghost { background:rgba(255,255,255,.12); color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6); backdrop-filter:blur(6px); }
-.cards { max-width:1120px; margin:0 auto; padding:72px 20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; }
-.card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:28px; }
-.num { font-family:var(--hfont); color:var(--accent); font-size:15px; font-weight:700; }
-.card h3 { font-family:var(--hfont); font-size:24px; margin:8px 0 6px; }
-.card p { margin:0; color:var(--muted); }
-.gallery { max-width:1120px; margin:0 auto; padding:0 20px 24px; }
-.gallery .grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; }
-.gallery img { width:100%; height:clamp(200px, 32vw, 380px); object-fit:cover; border-radius:16px; }
-.note { color:var(--muted); font-size:13px; margin:10px 0 0; }
-.book { padding:56px 20px; }
-.book-inner { max-width:1120px; margin:0 auto; background:var(--ink); color:#fff; border-radius:24px; padding:clamp(28px, 5vw, 56px);
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:32px; align-items:center; }
-.book h2 { font-family:var(--hfont); font-size:clamp(30px, 4vw, 44px); margin:10px 0 8px; line-height:1.1; }
-.book p { opacity:.85; margin:0; }
-.tag { display:inline-block; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:rgba(255,255,255,.14); padding:4px 10px; border-radius:999px; }
-.existing { margin-top:12px !important; font-size:14px; }
-.widget { background:#fff; color:var(--ink); border-radius:18px; padding:20px; }
-.days, .times { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
-.days button, .times button { font:inherit; border:1px solid var(--line); background:var(--bg); border-radius:12px; padding:8px 12px; cursor:pointer; color:var(--ink); }
-.days button { min-width:62px; line-height:1.25; }
-.days button small { display:block; color:var(--muted); font-size:12px; }
-.days button.on, .times button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
-.days button.on small { color:#fff; }
-.confirm { width:100%; }
-.demo-msg { color:var(--muted) !important; opacity:1 !important; font-size:14px; margin-top:10px !important; text-align:center; }
-.info { max-width:1120px; margin:0 auto; padding:56px 20px; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:40px; }
-.panel h2 { font-family:var(--hfont); font-size:30px; margin:0 0 16px; }
-.hours { width:100%; border-collapse:collapse; }
-.hours th, .hours td { text-align:left; padding:9px 0; border-bottom:1px solid var(--line); font-weight:400; }
-.hours td { text-align:right; font-variant-numeric:tabular-nums; }
+a { color:inherit; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+.wrap { width:100%; max-width:1140px; margin:0 auto; padding:0 20px; }
+.wrap > *, .wrap > * > * { min-width:0; }
+h1, h2, h3, p, li, a { overflow-wrap:break-word; }
+.contact a { overflow-wrap:anywhere; }
+.sample { background:#000; color:#fff; font:13px/1.4 system-ui, sans-serif; text-align:center; padding:7px 16px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:50px; padding:0 24px;
+  background:var(--accent); color:var(--on-accent); font:600 16px var(--body); text-decoration:none; border:0;
+  border-radius:var(--radius, 10px); cursor:pointer; }
+.btn:hover { filter:brightness(1.08); }
+.btn.alt { background:transparent; color:inherit; box-shadow:inset 0 0 0 2px currentColor; }
+.logo-img { height:46px; width:auto; max-width:180px; object-fit:contain; background:#fff; padding:5px 8px; border-radius:8px; }
+.open { display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:15px; }
+.open::before { content:""; width:9px; height:9px; border-radius:50%; background:#9aa0a6; }
+.open.is-open::before { background:#2fbf71; box-shadow:0 0 0 4px rgba(47,191,113,.25); }
+.open:empty { display:none; }
+.hours { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+.hours th, .hours td { text-align:left; padding:10px 0; border-bottom:1px solid var(--line); font-weight:400; }
+.hours td { text-align:right; }
 .hours tr.closed { color:var(--muted); }
-.panel p { margin:0 0 16px; }
-.map { width:100%; height:260px; border:0; border-radius:16px; margin-top:8px; }
-footer { text-align:center; color:var(--muted); font-size:14px; padding:32px 20px 48px; border-top:1px solid var(--line); }
-@media (max-width:640px) { .gallery .grid { grid-template-columns:1fr 1fr; } .gallery img:first-child { grid-column:1 / -1; } }
+.hours tr.today th, .hours tr.today td { font-weight:700; }
+.contact p { margin:0 0 18px; }
+.contact strong { display:block; font-size:14px; color:var(--muted); font-weight:600; }
+.contact a { text-decoration:none; font-weight:600; }
+.contact a:hover { text-decoration:underline; }
+.map { width:100%; height:280px; border:0; border-radius:var(--radius, 10px); margin-top:6px; filter:saturate(.85); }
+.note { color:var(--muted); font-size:13px; margin:12px 0 0; }
+.book .tag { display:inline-block; font-size:13px; font-weight:600; padding:3px 10px; border-radius:99px; background:var(--tint); color:var(--ink); }
+.widget { background:#fff; color:#1a1a1a; border-radius:var(--radius, 10px); padding:20px; box-shadow:0 1px 0 var(--line), 0 18px 40px -24px rgba(0,0,0,.35); }
+.days, .times { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.days button, .times button { font:inherit; font-size:15px; border:1px solid #d9d9d9; background:#fff; border-radius:8px; padding:8px 12px; cursor:pointer; color:#1a1a1a; }
+.days button { min-width:64px; line-height:1.25; }
+.days button small { display:block; color:#6b6b6b; font-size:12px; }
+.days button.on, .times button.on { background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+.days button.on small { color:inherit; }
+.widget .btn { width:100%; }
+.demo-msg { color:#6b6b6b; font-size:14px; margin:10px 0 0; text-align:center; }
+.callbar { display:none; }
+footer { color:var(--muted); font-size:14px; padding:36px 20px 48px; text-align:center; }
+@media (max-width:700px) {
+  body { padding-bottom:72px; }
+  .callbar { display:flex; gap:8px; position:fixed; left:0; right:0; bottom:0; z-index:20; padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    background:color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter:blur(10px); border-top:1px solid var(--line); }
+  .callbar .btn { flex:1; min-height:48px; padding:0 10px; }
+  .callbar .btn.alt { color:var(--ink); }
+}
+@keyframes rise { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+@keyframes settle { from { transform:scale(1.06); } to { transform:none; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; } }
+
+:root { --radius:4px; --steel:color-mix(in srgb, var(--ink) 92%, var(--accent)); }
+.hero { background:var(--steel); color:#fff; overflow:hidden; }
+.top { display:flex; justify-content:space-between; align-items:center; gap:12px; padding-top:18px; padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,.12); }
+.wordmark { font:900 20px var(--head); font-stretch:125%; text-transform:uppercase; letter-spacing:.01em; }
+.hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; padding-top:56px; padding-bottom:64px; }
+.area { color:var(--accent); font-weight:600; }
+.hero h1 { font:900 clamp(40px, 6.4vw, 84px)/.95 var(--head); font-stretch:125%; text-transform:uppercase; letter-spacing:-.01em;
+  margin:12px 0 18px; animation:rise .8s .1s cubic-bezier(.2,.7,.2,1) both; }
+.hero p { color:rgba(255,255,255,.82); font-size:19px; max-width:44ch; margin:0 0 26px; }
+.phone { display:block; font:800 clamp(34px, 5vw, 58px)/1 var(--head); font-stretch:125%; color:var(--accent); text-decoration:none;
+  margin-bottom:20px; letter-spacing:-.01em; }
+.phone small { display:block; font:600 14px var(--body); color:rgba(255,255,255,.7); letter-spacing:0; margin-bottom:6px; }
+.btns { display:flex; gap:10px; flex-wrap:wrap; }
+.btn.alt { color:#fff; }
+.frame { position:relative; }
+.frame img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius); position:relative; z-index:1; }
+.frame::before { content:""; position:absolute; inset:18px -18px -18px 18px; background:var(--accent); border-radius:var(--radius); }
+.services { padding:76px 0 40px; }
+.services .wrap { display:grid; grid-template-columns:.8fr 1.2fr; gap:48px; }
+.services h2, .visit h2, .book h2 { font:900 clamp(30px, 3.6vw, 44px)/1 var(--head); font-stretch:125%; text-transform:uppercase; margin:0 0 18px; }
+.items { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 28px; }
+.items li, .points .pt { padding:16px 0 16px 40px; border-top:2px solid var(--ink); position:relative; font-weight:600; font-size:19px; }
+.items li::before, .points .pt::before { content:""; position:absolute; left:0; top:18px; width:22px; height:22px; border-radius:3px;
+  background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/16px no-repeat; }
+.points { display:grid; gap:0; } .points h3 { margin:0 0 4px; font-size:20px; } .points p { margin:0; color:var(--muted); font-weight:400; }
+.gallery .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; }
+.gallery img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:var(--radius); }
+.book { padding:56px 0; } .book-in { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; background:var(--steel); color:#fff;
+  padding:40px; border-radius:var(--radius); } .book-in p { color:rgba(255,255,255,.8); }
+.book .tag { background:var(--accent); color:var(--on-accent); }
+.visit { padding:56px 0 20px; } .visit .wrap { display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+@media (max-width:760px) { .hero-grid, .services .wrap, .visit .wrap, .book-in { grid-template-columns:1fr; } .items { grid-template-columns:1fr; }
+  .frame::before { inset:12px -10px -12px 12px; } .frame { margin-right:10px; } .book-in { padding:24px; } }
 </style>
 </head>
 <body>
 <div class="sample">Sample design by Barry Lenhart. This is not the official website of Quickway Services.</div>
-<section class="hero">
-  <img class="hero-img" src="img/1.jpg" alt="car, engine, oil, auto, vehicle, car engine, motor, automobile, mechanic, transportation, car wallpapers, repair, power, automotive, technology, car repair, drive, machine, race, car driving, transport, service, garage, automotive repair, car service, brown car, brown technology, brown garage, brown power, brown service" fetchpriority="high">
-  <div class="nav"><div class="logo">Quickway Services</div><a href="tel:+12168830811">(216) 883-0811</a></div>
-  <div class="hero-body">
-    <div class="eyebrow">4582 Willow Parkway Cleveland</div>
-    <h1><span class="w"><span>Here</span></span> <span class="w"><span>when</span></span> <span class="w"><span>you</span></span> <span class="w"><span>need</span></span> <span class="w"><span>us</span></span> </h1>
-    <p class="intro">A local business that picks up the phone. Give us a call and we&#x27;ll get back to you.</p>
-    <div class="btns"><a class="btn" href="#book">Book an appointment</a><a class="btn light" href="tel:+12168830811">Call (216) 883-0811</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Quickway%20Services%204582%20Willow%20Parkway%20Cleveland" target="_blank" rel="noopener">Get directions</a></div>
+<header class="hero"><div class="wrap top"><img class="logo-img" src="img/logo.jpg" alt="Quickway Services logo"><span class="open"></span></div>
+  <div class="wrap hero-grid"><div><span class="area">4582 Willow Parkway Cleveland</span>
+    <h1>Here when you need us</h1><p>Quickway Services Inc. provides trusted mobile truck breakdown service. Visit our website or call us for more info about mobile truck repair services.</p><a class="phone" href="tel:+12168830811"><small>Call or text</small>(216) 883-0811</a><div class="btns"><a class="btn" href="#book">Book an appointment</a><a class="btn alt" href="tel:+12168830811">Call now</a><a class="btn alt" href="https://www.google.com/maps/search/?api=1&amp;query=Quickway%20Services%204582%20Willow%20Parkway%20Cleveland" target="_blank" rel="noopener">Get directions</a></div></div><div class="frame"><img class="hero-img" src="img/1.jpg" alt="car, engine, oil, auto, vehicle, car engine, motor, automobile, mechanic, transportation, car wallpapers, repair, power, automotive, technology, car repair, drive, machine, race, car driving, transport, service, garage, automotive repair, car service, brown car, brown technology, brown garage, brown power, brown service" fetchpriority="high"></div></div>
+</header>
+<section class="services"><div class="wrap"><h2>How we work</h2><div class="points"><div class="pt"><h3>Local</h3><p>Independent and nearby.</p></div><div class="pt"><h3>Responsive</h3><p>Real people answer the phone.</p></div><div class="pt"><h3>Straightforward</h3><p>Clear answers and fair prices.</p></div></div></div></section>
+<section class="gallery"><div class="wrap"><div class="grid"><img loading="lazy" src="img/2.jpg" alt="man, car, repair, car repair, car workshop, repair shop, repairs, garage, mechanic, vw beetle, car wallpapers, volkswagen, beetle, automotive, workshop, tools, supplies, monochrome, black and white"><img loading="lazy" src="img/3.jpg" alt="toolbox, socket, repair, tool, automotive, maintenance, chrome, mechanical, car wallpapers, wrench, mechanic, equipment, auto, car, workshop, gray car, gray tools"><img loading="lazy" src="img/4.jpg" alt="jaguar, car, engine, pirelli, machine, auto, mechanical, automotive, design, car wallpapers, manufacturing, mechanic, engineering, motor, power, gear, steel, wheel, wire, gray car, gray design, gray power"></div><p class="note">Photos are placeholders. Your own photos go here.</p></div></section>
+<section id="book" class="book"><div class="wrap book-in">
+  <div><span class="tag">Example</span><h2>Book online</h2><p>Pick a day and time that works for you. You'll get a confirmation right away.</p></div>
+  <div class="widget" data-open="0,1,2,3,4,5">
+    <div class="days"></div><div class="times"></div>
+    <button class="btn confirm" type="button">Confirm</button>
+    <p class="demo-msg" hidden>This is a preview. Online booking can be set up for you.</p>
   </div>
-</section>
-<div class="cards"><div class="card reveal"><span class="num">01</span><h3>Local</h3><p>Independent and nearby.</p></div><div class="card reveal"><span class="num">02</span><h3>Responsive</h3><p>Real people answer the phone.</p></div><div class="card reveal"><span class="num">03</span><h3>Straightforward</h3><p>Clear answers and fair prices.</p></div></div>
-<section class="gallery"><div class="grid"><img class="reveal" loading="lazy" src="img/2.jpg" alt="man, car, repair, car repair, car workshop, repair shop, repairs, garage, mechanic, vw beetle, car wallpapers, volkswagen, beetle, automotive, workshop, tools, supplies, monochrome, black and white"><img class="reveal" loading="lazy" src="img/3.jpg" alt="toolbox, socket, repair, tool, automotive, maintenance, chrome, mechanical, car wallpapers, wrench, mechanic, equipment, auto, car, workshop, gray car, gray tools"><img class="reveal" loading="lazy" src="img/4.jpg" alt="jaguar, car, engine, pirelli, machine, auto, mechanical, automotive, design, car wallpapers, manufacturing, mechanic, engineering, motor, power, gear, steel, wheel, wire, gray car, gray design, gray power"></div><p class="note">Photos are placeholders. Your own photos go here.</p></section>
-<section id="book" class="book">
-  <div class="book-inner reveal">
-    <div><span class="tag">Example</span><h2>Book online</h2><p>Pick a day and time that works for you. You'll get a confirmation right away.</p></div>
-    <div class="widget" data-open="0,1,2,3,4,5">
-      <div class="days"></div><div class="times"></div>
-      <button class="btn confirm" type="button">Confirm</button>
-      <p class="demo-msg" hidden>This is a preview. Online booking can be set up for you.</p>
-    </div>
-  </div>
-</section>
-<section class="info">
-  
-  <div class="panel reveal"><h2>Find us</h2><p><strong>Visit</strong><br><a href="https://www.google.com/maps/search/?api=1&amp;query=Quickway%20Services%204582%20Willow%20Parkway%20Cleveland" target="_blank" rel="noopener">4582 Willow Parkway Cleveland</a></p><p><strong>Call</strong><br><a href="tel:+12168830811">(216) 883-0811</a></p><p><strong>Email</strong><br><a href="mailto:karenhodges@quickwayservices.com">karenhodges@quickwayservices.com</a></p>
-    <iframe class="map" loading="lazy" src="https://www.google.com/maps?output=embed&amp;q=Quickway%20Services%204582%20Willow%20Parkway%20Cleveland" title="Map"></iframe>
-  </div>
-</section>
+</div></section>
+<section class="visit"><div class="wrap">
+  <div><h2>Hours</h2><p>Call any time to set up a visit.</p></div>
+  <div><h2>Find us</h2><div class="contact"><p><strong>Visit</strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Quickway%20Services%204582%20Willow%20Parkway%20Cleveland" target="_blank" rel="noopener">4582 Willow Parkway Cleveland</a></p><p><strong>Call</strong><a href="tel:+12168830811">(216) 883-0811</a></p><p><strong>Email</strong><a href="mailto:karenhodges@quickwayservices.com">karenhodges@quickwayservices.com</a></p></div><iframe class="map" loading="lazy" src="https://www.google.com/maps?output=embed&amp;q=Quickway%20Services%204582%20Willow%20Parkway%20Cleveland" title="Map to Quickway Services"></iframe></div>
+</div></section>
 <footer>&copy; Quickway Services &middot; Photos from Pixabay</footer>
+<nav class="callbar" aria-label="Quick actions"><a class="btn" href="tel:+12168830811">Call</a><a class="btn alt" href="#book">Book</a></nav>
 <script>
 (function () {
+  var H = null, tz = "America/New_York";
+  function now() { try { var p = new Intl.DateTimeFormat('en-US', {timeZone: tz, weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false}).formatToParts(new Date()), o = {};
+    p.forEach(function (x) { o[x.type] = x.value; }); return {d: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(o.weekday), m: (+o.hour % 24) * 60 + +o.minute}; } catch (e) { return null; } }
+  function clock(m) { var h = Math.floor(m / 60) % 24, mm = m % 60, s = h < 12 ? 'am' : 'pm'; h = h % 12 || 12; return h + (mm ? ':' + ('0' + mm).slice(-2) : '') + s; }
+  var t = now();
+  if (H && t && t.d >= 0) {
+    var row = document.querySelectorAll('.hours tr')[t.d]; if (row) row.classList.add('today');
+    var today = H[t.d], msg = '', open = false;
+    if (today && t.m >= today[0] && t.m < today[1]) { open = true; msg = 'Open now until ' + clock(today[1]); }
+    else if (today && t.m < today[0]) msg = 'Opens today at ' + clock(today[0]);
+    else for (var i = 1; i < 8; i++) { var n = H[(t.d + i) % 7]; if (n) { msg = 'Closed now. Opens ' + (i === 1 ? 'tomorrow' : ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][(t.d + i) % 7]) + ' at ' + clock(n[0]); break; } }
+    document.querySelectorAll('.open').forEach(function (el) { el.textContent = msg; el.classList.toggle('is-open', open); });
+  }
   var w = document.querySelector('.widget');
   if (w) {
-    var open = w.dataset.open.split(',').map(Number), days = w.querySelector('.days'), times = w.querySelector('.times');
+    var openDays = w.dataset.open.split(',').map(Number), days = w.querySelector('.days'), times = w.querySelector('.times');
     var names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], d = new Date(), shown = 0;
     for (var i = 1; i < 21 && shown < 5; i++) {
       var day = new Date(d.getFullYear(), d.getMonth(), d.getDate() + i), idx = (day.getDay() + 6) % 7;
-      if (open.indexOf(idx) < 0) continue;
+      if (openDays.indexOf(idx) < 0) continue;
       var b = document.createElement('button'); b.type = 'button';
       b.innerHTML = names[day.getDay()] + '<small>' + (day.getMonth() + 1) + '/' + day.getDate() + '</small>';
       if (!shown) b.className = 'on'; days.appendChild(b); shown++;
@@ -130,21 +159,6 @@ footer { text-align:center; color:var(--muted); font-size:14px; padding:32px 20p
     });
   }
 })();
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-<script>
-window.addEventListener('DOMContentLoaded', function () {
-  if (!window.gsap || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  gsap.registerPlugin(ScrollTrigger);
-  var img = document.querySelector('.hero-img');
-  if (img) gsap.from(img, { scale: 1.08, duration: 1.6, ease: 'power2.out' });
-  gsap.from('.hero h1 .w > span', { yPercent: 110, duration: .9, ease: 'power4.out', stagger: .07 });
-  gsap.from('.hero .eyebrow, .hero .intro, .hero .btns', { y: 18, opacity: 0, duration: .8, ease: 'power3.out', stagger: .1, delay: .35 });
-  gsap.set('.reveal', { y: 28, opacity: 0 });
-  ScrollTrigger.batch('.reveal', { start: 'top 90%', once: true,
-    onEnter: function (els) { gsap.to(els, { y: 0, opacity: 1, duration: .8, ease: 'power3.out', stagger: .1 }); } });
-});
 </script>
 </body>
 </html>
